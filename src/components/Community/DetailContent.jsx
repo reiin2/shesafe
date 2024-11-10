@@ -48,14 +48,15 @@ function DetailContent({ data }) {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteComment({ _id: idcomment, casesID: id }));
-        dispatch(
-          fetchCommentar({
-            id,
-            page,
-            perPage: per_page,
-          })
-        );
+        // dispatch(
+        //   fetchCommentar({
+        //     id,
+        //     page,
+        //     perPage: per_page,
+        //   })
+        // );
         Swal.fire("Terhapus!", "Komentar telah dihapus.", "success");
+        window.location.reload();
       } else {
         Swal.fire("Dibatalkan", "Komentar tidak dihapus.", "info");
       }
