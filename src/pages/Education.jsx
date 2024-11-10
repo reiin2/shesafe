@@ -28,15 +28,14 @@ function Education() {
           <p className="text-black text-xl"> Modul Edukasi</p>
           <div></div>
         </div>
-
         <div
           className={`px-5 mt-10 pb-[6rem] columns-2 justify-center items-center`}>
           {loading ? (
             <div className="flex flex-wrap gap-4">
               {[...Array(6)].map((_, index) => (
                 <div key={index} className="w-full mb-4">
-                  <Skeleton height={200} width="100%" />
-                  <Skeleton height={20} width="60%" />
+                  <div className="w-full bg-gray-300 h-48 mb-4"></div>{" "}
+                  <div className="w-3/5 bg-gray-300 h-6"></div>{" "}
                 </div>
               ))}
             </div>

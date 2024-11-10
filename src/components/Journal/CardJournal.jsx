@@ -52,6 +52,14 @@ function CardJournal({ journal }) {
     }
   };
 
+  const truncatedTitle =
+    journal.title.length > 60
+      ? journal.title.slice(0, 60) + "..."
+      : journal.title;
+  const truncatedDesc =
+    journal.description.length > 100
+      ? journal.description.slice(0, 80) + "..."
+      : journal.description;
   if (error) return <p>{error}</p>;
 
   return (
@@ -76,12 +84,12 @@ function CardJournal({ journal }) {
         <div className="px-4 py-3">
           <Link to={`/journal/${journal._id}`}>
             <h4 className="font-semibold text-gray-900 text-lg">
-              {journal.title}
+              {truncatedTitle}
             </h4>
           </Link>
           <p
             className="text-gray-600 text-sm mt-2"
-            dangerouslySetInnerHTML={{ __html: journal.description }}></p>
+            dangerouslySetInnerHTML={{ __html: truncatedDesc }}></p>
         </div>
 
         <div

@@ -16,7 +16,9 @@ function Card({ data }) {
   const truncatedTitle =
     data.title.length > 100 ? data.title.slice(0, 100) + "..." : data.title;
   const truncatedDesc =
-    data.title.length > 200 ? data.title.slice(0, 200) + "..." : data.title;
+    data.description.length > 100
+      ? data.description.slice(0, 100) + "..."
+      : data.description;
   return (
     <>
       <div className={`px-5 py-2 my-2`}>

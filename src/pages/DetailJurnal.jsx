@@ -217,7 +217,7 @@ const DetailJurnal = () => {
                   </td>
                   <td className="border px-4 py-2 text-center">
                     <a
-                      href={`${API_BASE_URL}/${data.file.path || ""}`}
+                      href={`${API_BASE_URL}/${data.file || ""}`}
                       className="text-blue-500 hover:underline"
                       target="_blank"
                       rel="noopener noreferrer">

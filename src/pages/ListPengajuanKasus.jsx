@@ -62,18 +62,6 @@ function ListPengajuanKasus() {
           <option value="Revisi">Revisi</option>
           <option value="Approved">Disetujui</option>
         </select>
-
-        {/* <div className="relative">
-          <input
-            type="date"
-            className="absolute top-0 left-0 opacity-0 w-full h-full cursor-pointer"
-            onChange={(e) => setSelectedDate(e.target.value)}
-          />
-          <button className="bg-[#BA324F] text-white px-4 py-2 rounded-[10px] inline-flex items-center">
-            <span>{selectedDate}</span>
-            <i className="fas fa-calendar-alt ml-2"></i>
-          </button>
-        </div> */}
       </div>
 
       {data.map((item) => (
@@ -106,7 +94,12 @@ function ListPengajuanKasus() {
             </h4>
             <p
               className="text-gray-600 mt-2"
-              dangerouslySetInnerHTML={{ __html: item.description }}></p>
+              dangerouslySetInnerHTML={{
+                __html:
+                  item.description.length > 100
+                    ? item.description.slice(0, 80) + "..."
+                    : item.description,
+              }}></p>
           </div>
 
           <div
